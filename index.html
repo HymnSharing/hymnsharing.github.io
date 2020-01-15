@@ -48,6 +48,10 @@
             text-align: center;
         }
 
+        .footer-div {
+            margin-top: 60px;
+        }
+
 
         .counterCell:before {
             content: counter(tableCount);
@@ -61,6 +65,12 @@
             x += document.lastModified;
             x = x.substring(0, 23);
             document.getElementById("updateTime").innerHTML = x;
+            document.getElementById("updateTimeBottom").innerHTML = x;
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 </head>
@@ -191,32 +201,23 @@
             </tbody>
         </table>
 
-        <!-- <h5>E</h5>
+        <h5>E</h5>
         <hr>
         <table class="table table-striped table-hover">
             <tbody>
                 <tr>
                     <th class="counterCell"></th>
-                    <td >Give Thanks</td>
-                    <td>10/19/2019</td>
-                    <td>2.5M</td>
+                    <td>恩典之路</td>
+                    <td>06/16/2017</td>
+                    <td>3.21M</td>
                     <td>
-                        <a href="./content/Give_Thanks.mp3" download="Give Thanks.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="./content/Give_Thanks.mp3" target="_blank">Listen</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="counterCell"></th>
-                    <td>耶稣给你平安</td>
-                    <td>10/12/2019</td>
-                    <td>3.3M</td>
-                    <td>
-                        <a href="./content/耶稣给你平安.mp3" download="耶稣给你平安.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="./content/耶稣给你平安.mp3" target="_blank">Listen</a>
+                        <a href="./content/20170616_你是我的主_领我走正义路.mp3"
+                            download="恩典之路.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="./content/20170616_你是我的主_领我走正义路.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
             </tbody>
-        </table> -->
+        </table>
 
         <h5>F</h5>
         <hr>
@@ -259,17 +260,6 @@
                     <td>
                         <a href="./content/191019_给怀疑的你.mp3" download="给怀疑的你.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/191019_给怀疑的你.mp3" target="_blank">Listen</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="counterCell"></th>
-                    <td>The Greatest Thing</td>
-                    <td>10/19/2019</td>
-                    <td>4.33M</td>
-                    <td>
-                        <a href="./content/191019_The_Greatest_Thing.mp3"
-                            download="The Greatest Thing.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="./content/191019_The_Greatest_Thing.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
             </tbody>
@@ -325,6 +315,17 @@
                         <a href="./content/191019_I_Lift_My_Hands.mp3"
                             download="I Lift My Hands.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/191019_I_Lift_My_Hands.mp3" target="_blank">Listen</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="counterCell"></th>
+                    <td>I Love to Walk With Jesus</td>
+                    <td>12/31/2019</td>
+                    <td>4.40M</td>
+                    <td>
+                        <a href="./content/191231_我爱与主同行.mp3"
+                            download="I Love to Walk With Jesus.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="./content/191231_我爱与主同行.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
                 <tr>
@@ -467,18 +468,9 @@
                         <a href="./content/你是我的平安.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
-                <tr>
-                    <th class="counterCell"></th>
-                    <td>你是我的主 领我走正义路</td>
-                    <td>06/16/2017</td>
-                    <td>3.21M</td>
-                    <td>
-                        <a href="./content/20170616_你是我的主_领我走正义路.mp3"
-                            download="你是我的主 领我走正义路.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="./content/20170616_你是我的主_领我走正义路.mp3" target="_blank">Listen</a>
-                    </td>
-                </tr>
-                <tr>
+                
+                <!-- Duplicate with W-10 W-11 -->
+                <!-- <tr>
                     <th class="counterCell"></th>
                     <td>你是我最爱</td>
                     <td></td>
@@ -487,7 +479,7 @@
                         <a href="./content/你是我最爱.m4a" download="你是我最爱.m4a">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/你是我最爱.m4a" target="_blank">Listen</a>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
 
@@ -560,7 +552,9 @@
                         <a href="./content/191005_亲近更亲近.mp3" download="亲近更亲近.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/191005_亲近更亲近.mp3" target="_blank">Listen</a>
                     </td>
-                </tr>
+
+                <!-- Not starts at the beginning, can be delted -->
+                <!-- </tr>
                 <tr>
                     <th class="counterCell"></th>
                     <td>亲近更亲近</td>
@@ -571,7 +565,8 @@
                             download="亲近更亲近.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/20170615_亲近更亲近.mp3" target="_blank">Listen</a>
                     </td>
-                </tr>
+                </tr> -->
+
                 <tr>
                     <th class="counterCell"></th>
                     <td>求主充满我</td>
@@ -645,6 +640,17 @@
             <tbody>
                 <tr>
                     <th class="counterCell"></th>
+                    <td>The Greatest Thing</td>
+                    <td>10/19/2019</td>
+                    <td>4.33M</td>
+                    <td>
+                        <a href="./content/191019_The_Greatest_Thing.mp3"
+                            download="The Greatest Thing.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="./content/191019_The_Greatest_Thing.mp3" target="_blank">Listen</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="counterCell"></th>
                     <td>This is God's Time</td>
                     <td>10/19/2019</td>
                     <td>3.36M</td>
@@ -684,16 +690,6 @@
                     <td>
                         <a href="./content/191019_头一次的爱.mp3" download="头一次的爱.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/191019_头一次的爱.mp3" target="_blank">Listen</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="counterCell"></th>
-                    <td>耶稣给你平安</td>
-                    <td>10/12/2019</td>
-                    <td>3.3M</td>
-                    <td>
-                        <a href="./content/耶稣给你平安.mp3" download="耶稣给你平安.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="./content/耶稣给你平安.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
             </tbody>
@@ -757,17 +753,6 @@
         <hr>
         <table class="table table-striped table-hover">
             <tbody>
-                <tr>
-                    <th class="counterCell"></th>
-                    <td>我爱与主同行</td>
-                    <td>12/31/2019</td>
-                    <td>4.40M</td>
-                    <td>
-                        <a href="./content/191231_我爱与主同行.mp3"
-                            download="我爱与主同行.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="./content/191231_我爱与主同行.mp3" target="_blank">Listen</a>
-                    </td>
-                </tr>
                 <tr>
                     <th class="counterCell"></th>
                     <td>我不屬自己</td>
@@ -1066,12 +1051,12 @@
                 </tr>
                 <tr>
                     <th class="counterCell"></th>
-                    <td>主内有真平安</td>
+                    <td>真平安</td>
                     <td>11/23/2019</td>
                     <td>1.1M</td>
                     <td>
                         <a href="./content/191123_主内有真平安.mp3"
-                            download="主内有真平安.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            download="真平安.mp3">Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="./content/191123_主内有真平安.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
@@ -1163,6 +1148,17 @@
 
             </tbody>
         </table>
+    </div>
+
+    <div class="card text-center footer-div">
+        <!-- <div class="card-header"></div> -->
+        <div class="card-body">
+            <!-- <p class="card-text">Please WeChat or Line me if you found any bugs. Thank you!</p> -->
+            <button onclick="topFunction()" id="topBtn" title="Go to top" class="btn btn-primary">Go Back to Top</button>
+        </div>
+        <div class="card-footer text-muted">
+            <p id="updateTimeBottom"></p>
+        </div>
     </div>
 </body>
 
