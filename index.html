@@ -81,7 +81,7 @@
                 $('[data-toggle="tooltip"]').tooltip()
             });
 
-            $('#myBt').click(function(e) {
+            $('#myBt').click(function (e) {
                 $('.newly-added').toggleClass('table-warning');
             });
         });
@@ -99,7 +99,8 @@
         <div>
             <p id="updateTime" class="d-inline-block"></p>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <button id="myBt" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#updates" aria-expanded="false" aria-controls="updates">What's New</button>
+            <button id="myBt" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#updates"
+                aria-expanded="false" aria-controls="updates">What's New</button>
         </div>
 
         <div class="collapse" id="updates">
@@ -110,7 +111,13 @@
                     <li>主啊，我跟着你走: now using the 2019 Summer Retreat version</li>
                 </ul>
             </div>
-          </div>
+        </div>
+
+        <audio controls>
+            <source src="./content/Amazing_Grace.mp3" type="audio/mp3">
+            <source src="./content/Cares_Chorus.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+          </audio>
 
         <table class="table table-striped table-hover">
             <thead>
@@ -139,7 +146,7 @@
                         <a href="./content/Amazing_Grace.mp3" target="_blank">Listen</a>
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
 
