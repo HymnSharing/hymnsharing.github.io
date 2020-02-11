@@ -6,7 +6,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 });
 var buttonColorOnPress = "white";
 $(document).ready(function(){
-$.getJSON('./playlist.json',function(data){
+$.getJSON('https://hymnsharing.github.io/player/playlist.json',function(data){
     var abort_other_json;
     var playlist = data;
     var index = 0;
