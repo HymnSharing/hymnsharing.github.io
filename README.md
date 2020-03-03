@@ -1,4 +1,44 @@
 # hymnsharing.github.io
-Hymn Sharing WebSite
 
-Testing
+## Hymn Sharing
+
+A GitHub page for sharing hymns.
+
+## Version History
+* 0.1.2
+  * New uploads
+  * 200104_求主今日更新我灵纯正.mp3
+  * 200104_盟约.mp3
+  * 200111_As_the_Deer.mp3
+  * 200111_Highest_Place.mp3
+  * 200111_I_Lift_My_Hands.mp3
+  * 200111_The_Greatest_Thing.mp3
+  * 200111_You_are_My_All_in_All.mp3
+  * 200112_祂为我死我才能活.mp3
+  * 200118_Great_Are_You_Lord.mp3
+  * 200118_献上自己为祭.mp3
+  * 200119_复兴你工作,主.mp3
+  * 200125_Majesty.mp3
+  * 200125_你的美丽将我心夺.mp3
+  * 200126_暴风雨中之避难所.mp3
+  * 200201_一生一世.mp3
+  * 200201_住在主里.mp3
+  * 200201_你的话.mp3
+  * 200201_耶和华神已掌权.mp3
+  * 200208_Unto_Thee_Oh_Lord.mp3
+  * 200208_仅此一生.mp3
+  * 200208_因他活着.mp3
+  * 200215_主啊,有谁能像你.mp3
+  * 200215_我如困鹿切慕溪水.mp3
+  * 200215_等主回来.mp3
+  * 200215_需要耶稣.mp3
+* 0.1.1
+  * Update *主啊，我跟着你走* to WCCC version
+* 0.1.0
+  * Multiple UI updates
+  * Good to use for now
+* 0.0.1
+  * Initial Commit
+
+## To-Do List
+- [] Integrate a music player - Still in planning phase
