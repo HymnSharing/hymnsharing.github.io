@@ -5,7 +5,8 @@
 A GitHub page for sharing hymns.
 
 ## Version History
-
+* 0.1.4
+  * Added "Play All" function
 * 0.1.3
   * 190908_从前那戴荆棘的头
   * 200105_为你而活

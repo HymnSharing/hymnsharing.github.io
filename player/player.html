@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Jianqiao&Xinhong" />
+    <title>Hymn Sharing - Playlist</title>
+    <link rel="icon" href="../Amazing_Grace.png?v=30" type="png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="all.min.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="all.min.js"></script>
+
+    <style>
+        #audio {
+            border-radius: 25px;
+            width: 500px;
+            height: 100px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        #playlist {
+            border-radius: 25px;
+            background: #666;
+            width: 500px;
+            padding: 50px;
+        }
+
+        .playlist-div {
+            padding: 20px;
+        }
+
+        .active a {
+            color: #5DB0E6;
+            text-decoration: none;
+        }
+
+        li a {
+
+            color: #eeeedd;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        li a:hover {
+            text-decoration: none;
+        }
+
+        ol {
+            list-style: none;
+            counter-reset: item;
+        }
+
+        li {
+            counter-increment: item;
+        }
+
+        li:before {
+            content: counter(item);
+            color: white;
+            display: inline-block;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .container-div {
+            padding-top: 10%;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            init();
+            function init() {
+                var current = 0;
+                var audio = $('#audio');
+                var playlist = $('#playlist');
+                var tracks = playlist.find('li a');
+                var len = tracks.length - 1;
+                audio[0].volume = .50;
+                audio[0].play();
+                playlist.on('click', 'a', function (e) {
+                    e.preventDefault();
+                    link = $(this);
+                    current = link.parent().index();
+                    run(link, audio[0]);
+                });
+                audio[0].addEventListener('ended', function (e) {
+                    current++;
+                    if (current == len) {
+                        current = 0;
+                        link = playlist.find('a')[0];
+                    } else {
+                        link = playlist.find('a')[current];
+                    }
+                    run($(link), audio[0]);
+                });
+            }
+            function run(link, player) {
+                player.src = link.attr('href');
+                par = link.parent();
+                par.addClass('active').siblings().removeClass('active');
+                player.load();
+                player.play();
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid container-div">
+        <div class="d-flex justify-content-center audio-div">
+            <div>
+                <video id="audio"  tabindex="0" controls autoplay>
+                    <source src="../content/200111_As_the_Deer.mp3">
+                    Your Fallback goes here
+                </video>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center playlist-div">
+            <div class="list-div">
+                <ol id="playlist" class="list-group">
+
+                    <li class="active">
+                        <a href="../content/200111_As_the_Deer.mp3">As the Deer</a>
+                    </li>
+                    <li>
+                        <a href="../content/200126_暴风雨中之避难所.mp3">暴风雨中之避难所</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/Cares_Chorus.mp3">Cares Chorus</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/190908_从前那戴荆棘的头.mp3">从前那戴荆棘的头</a>
+                    </li>
+
+
+                    <li>
+                        <a href="../content/191102_大海中的道路.mp3">大海中的道路</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170616_道路.mp3">道路</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200215_等主回来.mp3">等主回来</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170616_你是我的主_领我走正义路.mp3">恩典之路</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_奉獻_成為耶穌見證.mp3">奉獻, 成為耶穌見證</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200119_复兴你工作,主.mp3">复兴你工作, 主.</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200118_Great_Are_You_Lord.mp3">Great Are You Lord</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191019_给怀疑的你.mp3">给怀疑的你</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_何等恩典.mp3">何等恩典</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200111_Highest_Place.mp3">Highest Place</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/活着为耶稣.mp3">活着为耶稣</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200111_I_Lift_My_Hands.mp3">I Lift My Hands</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_我爱与主同行.mp3">I Love to Walk With Jesus</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191102_I_was_Made_for_You.mp3">I was Made for You</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200229_I_will_Sing.mp3">I will Sing</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_拣选.mp3">拣选</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200208_仅此一生.mp3">仅此一生</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/Amazing_Grace.mp3">惊人恩典</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200126_靠近主.mp3">靠近主</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_Knowing_You_Jesus.mp3">Knowing You Jesus</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200125_Majesty.mp3">Majesty</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_MARANATHA.mp3">MARANATHA</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200104_盟约.mp3">盟约</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191123_每一时每一刻.mp3">每一时每一刻</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200201_你的话.mp3">你的话</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200125_你的美丽将我心夺.mp3">你的美丽将我心夺</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200118_No_Higher_Calling.mp3">No Higher Calling</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191019_那看不见的手.mp3">那看不见的手</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191102_你是.mp3">你是</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/你是我的平安.mp3">你是我的平安</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191207_O_Lord_You_re_Beautiful.mp3">O Lord You are Beautiful</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20190811_哦,我愿成为无有.mp3">哦, 我愿成为无有</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_僕人的眼睛.mp3">僕人的眼睛</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191005_亲近更亲近.mp3">亲近更亲近</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/求主充满我.mp3">求主充满我</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200104_求主今日更新我灵纯正.mp3">200104_求主今日更新我灵纯正</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200111_The_Greatest_Thing.mp3">The Greatest Thing</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191207_This_is_God_s_Time.mp3">This is God's Time</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/Thy_Loving_Kindness_is_Better_Than_Life.mp3">Thy Loving Kindness is Better
+                            Than Life</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_To_Know_Him.mp3">To Know Him</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200118_Thy_name_is_as_ointment_poured_forth.mp3">Thy name is as ointment
+                            poured forth</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200112_祂为我死我才能活.mp3">祂为我死我才能活</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191019_头一次的爱.mp3">头一次的爱</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200208_Unto_Thee_Oh_Lord.mp3">Unto Thee Oh Lord</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170617_We_are_Gathering_Together_Unto_Him.mp3">We are Gathering Together
+                            Unto Him</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_我不屬自己.mp3">我不屬自己</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/我的心你要称颂耶和华.mp3">我的心你要称颂耶和华</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/忘记背后,直奔标杆.mp3">忘记背后,直奔标杆</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191005_万军之耶和华.mp3">万军之耶和华</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200222_万民同来敬拜.mp3">万民同来敬拜</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200105_为你而活.mp3">为你而活</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200215_我如困鹿切慕溪水.mp3">我如困鹿切慕溪水</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200222_我神,我爱,我的永分.mp3">我神, 我爱, 我的永分</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191019_我深信在那各各他山顶.mp3">我深信在那各各他山顶</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_我深知惟有你是我所愛.mp3">我深知惟有你是我所爱</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200118_we_worship_and_adore_thee.mp3">We worship and adore thee</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191109_when_we_see_christ.mp3">When We See Christ</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191012_我有个故事告诉你.mp3">我有个故事告诉你</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20160616_我主请说仆人敬听.mp3">我主请说仆人敬听</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191005_我知谁掌管明天.mp3">我知谁掌管明天</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200215_需要耶稣.mp3">需要耶稣</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200118_献上自己为祭.mp3">献上自己为祭</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200229_You_are_My_Hinding_Place.mp3">You are my Hinding Place</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200201_耶和华神已掌权.mp3">耶和华神已掌权</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200208_因他活着.mp3">因他活着</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191012_永恒的答问.mp3">永恒的答问</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200111_You_are_My_All_in_All.mp3">You are My All in All</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191231_玉漏沙殘.mp3">玉漏沙殘</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/有你真好.mp3">有你真好</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/耶稣给你平安.mp3">耶稣给你平安</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170615_耶穌同在就是天堂.mp3">耶穌同在就是天堂</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200105_耶稣我来就你.mp3">耶稣我来就你</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200229_一生爱你.mp3">一生爱你</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200201_一生一世.mp3">一生一世</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170617_与我同住.mp3">与我同住</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191019_有一位神.mp3">有一位神</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/愿主为我擘开生命的饼.mp3">愿主为我擘开生命的饼</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191123_主阿,你不可让步.mp3">主阿, 你不可让步</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20190812_主啊，我跟着你走.mp3">主啊, 我跟着你走</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200215_主啊,有谁能像你.mp3">主啊, 有谁能像你</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200222_再次将我更新.mp3">再次将我更新</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191123_主内有真平安.mp3">真平安</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200209_主我把自己.mp3">主我把自己</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191207_主我如羊安歇在溪边.mp3">主我如羊安歇在溪边</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191102_主我邀请你.mp3">主我邀请你</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170615_主耶稣我羡慕活在你面前.mp3">主耶稣我羡慕活在你面前</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191102_这一生最美的祝福.mp3">这一生最美的祝福</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/20170617_只有一事.mp3">只有一事</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/191109_最知心的朋友.mp3">最知心的朋友</a>
+                    </li>
+
+                    <li>
+                        <a href="../content/200201_住在主里.mp3">住在主里</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
