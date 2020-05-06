@@ -5,8 +5,27 @@
 A GitHub page for sharing hymns.
 
 ## Version History
+
+* 0.1.3
+  * 190908_从前那戴荆棘的头
+  * 200105_为你而活
+  * 200105_耶稣我来就你
+  * 200118_No_Higher_Calling
+  * 200118_Thy_name_is_as_ointment_poured_forth
+  * 200118_we_worship_and_adore_thee
+  * 200126_靠近主
+  * 200209_主我把自己
+  * 200222_万民同来敬拜
+  * 200222_再次将我更新
+  * 200222_我神,我爱,我的永分
+  * 200229_I will Sing
+  * 200229_You_are_My_Hinding_Place
+  * 200229_一生爱你
+  * 20190811_哦，我愿成为无有
 * 0.1.2
-  * New uploads
+  * Click/Tap on "What's New" will highlight new updates since last time
+  * Remove duplicates: only latest recordings are kept
+  * Multiple new uploads/updates
   * 200104_求主今日更新我灵纯正.mp3
   * 200104_盟约.mp3
   * 200111_As_the_Deer.mp3
