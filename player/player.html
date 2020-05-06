@@ -81,6 +81,23 @@
         .container-div {
             padding-top: 10%;
         }
+
+        .play-options {
+            width: 200px;
+            background-color: white;
+            border-radius: 25px;
+            padding: 10px;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            display: inline;
+        }
+
+        .option-active {
+            background-color: #f27272;
+        }
     </style>
 
     <script>
@@ -92,6 +109,8 @@
                 var playlist = $('#playlist');
                 var tracks = playlist.find('li a');
                 var len = tracks.length - 1;
+
+                var playOption = 'r';
                 audio[0].volume = .50;
                 audio[0].play();
                 playlist.on('click', 'a', function (e) {
@@ -100,14 +119,46 @@
                     current = link.parent().index();
                     run(link, audio[0]);
                 });
+
+                $('#repeat').click(function (e) {
+                    $('#repeat').addClass('option-active');
+                    $('#single').removeClass('option-active');
+                    $('#shuffle').removeClass('option-active');
+                    playOption = 'r';
+                });
+
+                $('#single').click(function (e) {
+                    $('#repeat').removeClass('option-active');
+                    $('#single').addClass('option-active');
+                    $('#shuffle').removeClass('option-active');
+                    playOption = 's';
+                });
+
+                $('#shuffle').click(function (e) {
+                    $('#repeat').removeClass('option-active');
+                    $('#single').removeClass('option-active');
+                    $('#shuffle').addClass('option-active');
+                    playOption = 'f';
+                });
+
+
+
                 audio[0].addEventListener('ended', function (e) {
-                    current++;
-                    if (current == len) {
-                        current = 0;
-                        link = playlist.find('a')[0];
-                    } else {
+                    if (playOption === 'r') {
+                        current++;
+                        if (current == len) {
+                            current = 0;
+                            link = playlist.find('a')[0];
+                        } else {
+                            link = playlist.find('a')[current];
+                        }
+                    } else if (playOption === 's') {
+                        link = playlist.find('a')[current];
+                    } else if (playOption === 'f') {
+                        current = Math.floor(Math.random() * len) - 1;
                         link = playlist.find('a')[current];
                     }
+
                     run($(link), audio[0]);
                 });
             }
@@ -127,12 +178,30 @@
     <div class="container-fluid container-div">
         <div class="d-flex justify-content-center audio-div">
             <div>
-                <audio id="audio"  tabindex="0" controls autoplay>
+                <audio id="audio" tabindex="0" controls autoplay>
                     <source src="../content/200111_As_the_Deer.mp3">
                     Your Fallback goes here
-                </video>
+                    </video>
             </div>
         </div>
+        <div class="d-flex justify-content-center">
+            <div class="play-options d-flex justify-content-center">
+                <div class="container d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col">
+                            <img src="repeat.png" alt="repeat" id="repeat" class="option-active">
+                        </div>
+                        <div class="col">
+                            <img src="single.png" alt="single" id="single">
+                        </div>
+                        <div class="col">
+                            <i class="fas fa-random" id="shuffle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="d-flex justify-content-center playlist-div">
             <div class="list-div">
                 <ol id="playlist" class="list-group">
