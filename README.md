@@ -5,13 +5,13 @@
 A GitHub page for sharing hymns.
 
 ## Version History
-* 0.2.1
+* 0.2.1 - 5/8/2020
   * User experience update: add hymn name on top and to title
-* 0.2.0
+* 0.2.0 - 5/6/2020
   * Added play options: repeat, single-repeat and shuffle
-* 0.1.4
+* 0.1.4 - 5/5/2020
   * Added "Play All" function
-* 0.1.3
+* 0.1.3 - 5/4/2020
   * 190908_从前那戴荆棘的头
   * 200105_为你而活
   * 200105_耶稣我来就你
@@ -27,7 +27,7 @@ A GitHub page for sharing hymns.
   * 200229_You_are_My_Hinding_Place
   * 200229_一生爱你
   * 20190811_哦，我愿成为无有
-* 0.1.2
+* 0.1.2 - 3/3/2020
   * Click/Tap on "What's New" will highlight new updates since last time
   * Remove duplicates: only latest recordings are kept
   * Multiple new uploads/updates
@@ -56,13 +56,10 @@ A GitHub page for sharing hymns.
   * 200215_我如困鹿切慕溪水.mp3
   * 200215_等主回来.mp3
   * 200215_需要耶稣.mp3
-* 0.1.1
+* 0.1.1 - 2/11/2020
   * Update *主啊，我跟着你走* to WCCC version
-* 0.1.0
+* 0.1.0 - 1/7/2020
   * Multiple UI updates
   * Good to use for now
-* 0.0.1
+* 0.0.1 - 11/19/2019
   * Initial Commit
-
-## To-Do List
-- [] Integrate a music player - Still in planning phase
