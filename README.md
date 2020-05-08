@@ -5,7 +5,9 @@
 A GitHub page for sharing hymns.
 
 ## Version History
-*0.2.0
+* 0.2.1
+  * User experience update: add hymn name on top and to title
+* 0.2.0
   * Added play options: repeat, single-repeat and shuffle
 * 0.1.4
   * Added "Play All" function

@@ -101,6 +101,17 @@
             background-size: 50px;
             border-radius: 25px;
         }
+
+        .name-div {
+            width: 300px;
+            background-color: white;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        #hymn-name {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     </style>
 
     <script>
@@ -120,6 +131,8 @@
                     e.preventDefault();
                     link = $(this);
                     current = link.parent().index();
+                    $(document).prop('title', $(link).text());
+                    $('#hymn-name').text($(link).text());
                     run(link, audio[0]);
                 });
 
@@ -144,8 +157,6 @@
                     playOption = 'f';
                 });
 
-
-
                 audio[0].addEventListener('ended', function (e) {
                     if (playOption === 'r') {
                         current++;
@@ -161,7 +172,8 @@
                         current = Math.floor(Math.random() * len) - 1;
                         link = playlist.find('a')[current];
                     }
-
+                    $(document).prop('title', $(link).text());
+                    $('#hymn-name').text($(link).text());
                     run($(link), audio[0]);
                 });
             }
@@ -179,14 +191,23 @@
 <body>
 
     <div class="container-fluid container-div">
+        
+        <div class="d-flex justify-content-center ">
+            <div class="name-div">
+                <p id="hymn-name" class="text-center font-weight-bold">As the Deer</p>
+            </div>
+        </div>
+
         <div class="d-flex justify-content-center audio-div">
             <div>
                 <audio id="audio" tabindex="0" controls autoplay>
                     <source src="../content/200111_As_the_Deer.mp3">
                     Your Fallback goes here
-                    </video>
+                    </audio>
             </div>
         </div>
+
+        
         <div class="d-flex justify-content-center">
             <div class="play-options d-flex justify-content-center">
                 <div class="container d-flex justify-content-center">
