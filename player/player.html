@@ -89,7 +89,8 @@
             padding: 10px;
         }
 
-        img, i {
+        img,
+        i {
             width: 25px;
             height: 25px;
             display: inline;
@@ -108,6 +109,7 @@
             border-radius: 25px;
             padding: 10px;
         }
+
         #hymn-name {
             margin-top: 0;
             margin-bottom: 0;
@@ -184,6 +186,16 @@
                 player.load();
                 player.play();
             }
+            $(window).keypress(function (e) {
+                if (e.key === ' ' || e.key === 'Spacebar') {
+                    e.preventDefault();
+                    if ($('#audio')[0].paused == false) {
+                        $('#audio')[0].pause();
+                    } else {
+                        $('#audio')[0].play();
+                    }
+                }
+            });
         });
     </script>
 </head>
@@ -191,7 +203,7 @@
 <body>
 
     <div class="container-fluid container-div">
-        
+
         <div class="d-flex justify-content-center ">
             <div class="name-div">
                 <p id="hymn-name" class="text-center font-weight-bold">As the Deer</p>
@@ -203,11 +215,11 @@
                 <audio id="audio" tabindex="0" controls autoplay>
                     <source src="../content/200111_As_the_Deer.mp3">
                     Your Fallback goes here
-                    </audio>
+                </audio>
             </div>
         </div>
 
-        
+
         <div class="d-flex justify-content-center">
             <div class="play-options d-flex justify-content-center">
                 <div class="container d-flex justify-content-center">

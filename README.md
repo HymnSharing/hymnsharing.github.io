@@ -5,6 +5,8 @@
 A GitHub page for sharing hymns.
 
 ## Version History
+* 0.2.2
+  * User experience update: press space bar can now toggle play/pause
 * 0.2.1 - 5/8/2020
   * User experience update: add hymn name on top and to title
 * 0.2.0 - 5/6/2020
