@@ -171,7 +171,7 @@
                     } else if (playOption === 's') {
                         link = playlist.find('a')[current];
                     } else if (playOption === 'f') {
-                        current = Math.floor(Math.random() * len) - 1;
+                        current = Math.floor(Math.random() * len);
                         link = playlist.find('a')[current];
                     }
                     $(document).prop('title', $(link).text());
